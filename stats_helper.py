@@ -9,9 +9,11 @@ class Stats:
         self.server_error = 0
         self.not_found = 0
         self.timeout = 0
+        self.con_error = 0
         self.server_error_perc = 0
         self.not_found_perc = 0
         self.timeout_perc = 0
+        self.con_error_perc = 0
 
     def set_finish(self, timestamp):
         self.finish = timestamp
@@ -30,6 +32,15 @@ class Stats:
 
     def log_timeout(self):
         self.timeout = self.timeout + 1
+
+    def get_timeout(self):
+        return self.timeout
+
+    def log_conn_error(self):
+        self.con_error = self.con_error + 1
+
+    def get_conn_error(self):
+        return self.con_error
 
     def calc_execution_time(self):
         return self.finish - self.start

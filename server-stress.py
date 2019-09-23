@@ -16,6 +16,7 @@ if __name__ == '__main__':
     number_of_users = args.users
     concurrency = args.conc
     host = args.host
+    total_requests = number_of_users * concurrency
 
     stats = Stats()
 
@@ -29,9 +30,12 @@ if __name__ == '__main__':
 
     stats.set_finish(time.time())
 
-    print(stats.calc_execution_time())
-    print(stats.get_not_found())
-    print(stats.get_server_error())
+    print("Execution time: {}".format(stats.calc_execution_time()))
+    print("Total requests sent: {}".format(total_requests))
+    print("Not found 404: {}".format(stats.get_not_found()))
+    print("Server error 500: {}".format(stats.get_server_error()))
+    print("Timeouts: {}".format(stats.get_timeout()))
+
 
     
 

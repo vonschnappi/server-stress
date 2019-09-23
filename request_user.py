@@ -24,9 +24,8 @@ class User:
                 self.stats.log_server_error()
         except requests.exceptions.Timeout as e:
             self.stats.log_timeout()
-            print('timeout')
         except requests.exceptions.ConnectionError as e:
-            print('con error')
+            self.stats.log_conn_error
         except requests.exceptions.HTTPError as e:
             print('http error')
 
