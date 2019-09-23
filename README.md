@@ -4,9 +4,13 @@ This a small python script that sends multiple requests to test server stress an
 ## What it does
 This script creates a bunch of threads that send simoultanous requests to a specified host. It essentially simulates server stress in that it creates a bunch of users who send a bunch of requests. You get the idea...
 
+The script also includes a stats heloper that gathers stats about execution time, timeouts and connection errors.
+See stats-helper.py
+
 ## Requirements
 This server stress script makes use of the requests python package. Install it before you run the script.
 https://2.python-requests.org/en/master/
+
 Code was written in python3
 
 ## How to run
